@@ -17,7 +17,7 @@ import { GeovanneDetalhesComponent } from './geovanne-detalhes/geovanne-detalhes
     RouterModule.forRoot([
       { path: '', component: GeovanneComponent },
       { path: 'lista', component: GeovanneListaComponent },
-      { path: 'detalhes', component: GeovanneDetalhesComponent },
+      { path: 'list/:index', component: GeovanneDetalhesComponent },
     ]),
   ],
   declarations: [

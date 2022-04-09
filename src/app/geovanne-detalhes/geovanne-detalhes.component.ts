@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { listData } from '../list';
 
 @Component({
   selector: 'app-geovanne-detalhes',
@@ -6,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./geovanne-detalhes.component.css'],
 })
 export class GeovanneDetalhesComponent implements OnInit {
-  constructor() {}
+  item;
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.paramMap.subscribe((params) => {
+      this.item = listData[params.get('index')];
+    });
+  }
 }
