@@ -8,6 +8,21 @@ import { listData } from '../list';
 })
 export class GeovanneListaComponent implements OnInit {
   list = listData;
+
+  newItem: any;
+
+  addToList() {
+    if (this.newItem == '') {
+    } else {
+      this.list.push(this.newItem);
+      this.newItem = '';
+    }
+  }
+
+  deleteTask(index) {
+    this.list.splice(index, 1);
+  }
+
   constructor() {}
 
   ngOnInit() {}

@@ -5,6 +5,7 @@
     <th>Disciplina</th>
     <th>Dia da Semana</th>
     <th>Horário</th>
+    <th>Deletar</th>
   </tr>
   <tr *ngFor="let item of list; index as i">
     <td>
@@ -13,7 +14,9 @@
     <td>{{ item.name }}</td>
     <td>{{ item.ds }}</td>
     <td>{{ item.hr }}</td>
+    <td><input (click)="deleteTask(i)" type="button" value="Delete" /></td>
   </tr>
 </table>
 
-<input type="text">
+<input [(ngModel)]="newItem" type="text" /> -
+<button (click)="addToList()">Adicionar</button>
